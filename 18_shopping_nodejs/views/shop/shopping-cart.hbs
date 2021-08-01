@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    {{#if products}}
+    <div class="row">
+        <div class="col-sm-6 col-md-6 offset-3">
+            <ul class="list-group">
+                {{#each products}}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>{{this.item.title}}</strong>
+                    <span class="badge badge-success bg-secondary">${{this.price}}</span>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown">Action</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/reduce/{{this.item._id}}" class="dropdown-item">Reduce</a></li>
+                            <li><a href="/remove/{{this.item._id}}" class="dropdown-item">Remove</a></li>
+                        </ul>
+                    </div>
+                    <span class="badge rounded-pill bg-dark">{{this.qty}}</span>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-sm-6 col-md-6 offset-3">
+            <strong>Total: {{totalPrice}}</strong>
+        </div>
+    </div>
+    <hr>
+    
+    <form action="/checkout" method="get">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 offset-3">
+                <button type="submit" class="btn btn-success">Checkout</button>
+            </div>
+            <a href="/checkout?{{random}}">TEST</a>
+        </div>
+    </form>
+
+    {{else}}
+    <div class="row">
+        <div class="col-sm-6 col-md-6 offset-3">
+            <h2>No Items in Cart</h2>
+        </div>
+    </div>
+    {{/if}}
+
+</div>

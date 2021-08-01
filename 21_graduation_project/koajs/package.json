@@ -1,0 +1,22 @@
+{
+  "name": "koajs",
+  "version": "1.0.0",
+  "description": "app_final_studying",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "keywords": [
+    "app_final_studying"
+  ],
+  "author": "DucKiller",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.9"
+  },
+  "dependencies": {
+    "koa": "^2.13.1"
+  }
+}

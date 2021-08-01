@@ -1,0 +1,36 @@
+<header class="p-3 bg-dark text-white sticky-top">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <i class="fab fa-battle-net fa-2x"></i> </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/" class="nav-link px-2 text-secondary">&nbsp;&nbsp;Home</a></li>
+                <li><a href="/category" class="nav-link px-2 text-white">Category</a></li>
+                <li><a href="/checkout" class="nav-link px-2 text-white">Checkout</a></li>
+                <li><a href="/shopping-cart" class="nav-link px-2 text-white">Shopping Cart&emsp;
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
+                            class="bi bi-bag" viewBox="0 0 16 16">
+                            <path
+                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                            <span
+                                class="badge rounded-pill bg-success">{{session.cart.totalQty}}</span>
+                        </svg></a></li>
+                {{#if login}}
+                <li><a href="/user/profile" class="nav-link px-2 text-white">About</a></li>
+                <li><a href="/user/logout" class="nav-link px-2 text-white">Logout</a></li>
+                {{/if}}
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <input type="search" class="form-control form-control-dark" placeholder="Search...">
+            </form>
+            <div class="text-end">
+                <a href="/user/signin" class="btn btn-outline-light me-2">Sign-in</a>
+                <a href="/user/signup" class="btn btn-success">Sign-up</a>
+                {{!-- <button type="button" class="btn btn-outline-light me-2" onclick="signin()">Login</button> --}}
+                {{!-- <button type="button" class="btn btn-success" onclick="signup()">Sign-up</button> --}}
+            </div>
+        </div>
+    </div>
+</header>

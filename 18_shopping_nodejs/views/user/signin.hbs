@@ -1,0 +1,49 @@
+<div class="text-center">
+    <div class="form-signin form-floating">
+        <form action="/user/signin" method="post">
+            <i style="margin: 1rem" class="fas fa-heartbeat fa-4x"></i>
+            <br>
+            <h1 class="h3 mb-3 fw-normal">Sign In</h1>
+            {{#if hasErrors}}
+            <div class="alert alert-danger">
+                {{#each messages}}
+                <p>{{this}}</p>
+                {{/each}}
+            </div>
+            {{/if}}
+            <div class="form-floating">
+                <input name="email" type="email__ignore" class="form-control" id="floatingInput"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input name="password" type="password" class="form-control" id="floatingPassword01"
+                    placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            {{!-- <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword02" placeholder="Password">
+                <label for="floatingPassword">Confirm password</label>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">First and last name</span>
+                <input type="text" class="form-control" id="floatingText" placeholder="A">
+                <input type="text" class="form-control" id="floatingText" placeholder="B">
+            </div>
+            <br><br>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> I accept the <a href="#">Terms of Use &amp; Privacy
+                        Policy</a>
+                </label>
+            </div> --}}
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+            {{!-- <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p> --}}
+        </form>
+    </div>
+    <div class="form-floating"><a href="#" style="text-decoration: none;">Forgot your account or password?</a></div>
+    <div class="form-floating"><a href="/user/signup" style="text-decoration: none;">Don't have an account? Create one now.</a>
+    </div>
+</div>
